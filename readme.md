@@ -1,3 +1,3 @@
-# Combined ASP.NET Identity and EF Core Storage for IdentityServer
+# Squiddly a personal deployment engine for myself
 
-This sample shows how you could configure both ASP.NET Identity and the EF Storage for configuration and operational data into a single IdentityServer host.
+Octopus costs just waaaay too much
