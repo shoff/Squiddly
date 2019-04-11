@@ -14,11 +14,6 @@ namespace Squiddly.Domain
     {
         private int totalRequests;
         private int eventualSuccesses;
-        private int retries;
-        private int eventualFailures;
-        private string host;
-        private string username;
-        private string password;
 
 
         public FtpSquirt() { }
@@ -26,25 +21,9 @@ namespace Squiddly.Domain
         public FtpSquirt(string host, string username, string password)
             : base(host, username, password)
         {
-            this.host = host;
-            this.username = username;
-            this.password = password;
-            this.Host = host;
-            this.Credentials = new NetworkCredential(username, password);
-            this.Connect(host, username, password);
-        }
+            this.DataConnectionType = FtpDataConnectionType.EPSV;
+            this.SetWorkingDirectory("/");
 
-        public new void Connect(string host, string username, string password)
-        {
-            if (!this.IsConnected)
-            {
-                this.Host = host;
-                this.Credentials = new NetworkCredential(username, password);
-                this.Connect(host, username, password);
-                this.DataConnectionType = FtpDataConnectionType.EPSV;
-                base.Connect();
-                this.SetWorkingDirectory("/");
-            }
         }
 
         public async Task UploadFolderAsync(string folder, string remoteFolder, CancellationToken cancellationToken, IProgress<UploadProgress> progress)
@@ -53,12 +32,8 @@ namespace Squiddly.Domain
             Guard.IsNotDefault(cancellationToken, nameof(cancellationToken));
             Guard.IsNotNull(progress, nameof(progress));
 
-            var uploadProgress = new UploadProgress("upload starting");
+            var uploadProgress = new UploadProgress("upload starting", 0, 1);
             eventualSuccesses = 0;
-            retries = 0;
-            eventualFailures = 0;
-
-            var listing = await this.GetListingAsync(cancellationToken);
             progress.Report(uploadProgress);
 
             // Define our policy:
@@ -75,8 +50,7 @@ namespace Squiddly.Domain
                     {
                         message += ie.Message;
                     }
-                    progress.Report(uploadProgress.AddMessage(message + exception.Message));
-                    retries++;
+                    progress.Report(new UploadProgress(message + exception.Message, exception: true));
                 });
 
             totalRequests = 0;
@@ -99,13 +73,13 @@ namespace Squiddly.Domain
                             {
                                 var remoteFile = fileList[i].Substring(fileList[i].LastIndexOf('\\') + 1);
                                 bool result = await this.UploadAsync(ms, $"/{remoteFile}", token: token);
+                                progress.Report(new UploadProgress(remoteFile, i, fileList.Length));
                             }
                         }, cancellationToken);
                     }
                     catch (Exception e)
                     {
-                        progress.Report(uploadProgress.AddMessage("Request " + totalRequests + " eventually failed with: " + e.Message));
-                        eventualFailures++;
+                        progress.Report(new UploadProgress("Request " + totalRequests + " eventually failed with: " + e.Message, exception: true));
                         throw;
                     }
 
@@ -121,16 +95,18 @@ namespace Squiddly.Domain
 
     public class UploadProgress
     {
-        public UploadProgress(string message)
+        public UploadProgress(string message, int complete = 0, int total = 0, bool exception = false)
         {
-            Messages.Add(message);
+            if (!exception)
+            {
+                var percent = (double) 100.0 * (double) complete / (double) total;
+                Message = $"Uploaded {message} {complete} of {total} - ({(int)percent} %) completed";
+            }
+            else
+            {
+                Message = message;
+            }
         }
-
-        public UploadProgress AddMessage(string message)
-        {
-            this.Messages.Add(message);
-            return this;
-        }
-        public ICollection<string> Messages => new List<string>();
+        public string Message { get; set; }
     }
 }

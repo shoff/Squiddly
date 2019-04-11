@@ -10,11 +10,11 @@ namespace Squiddly
         static async Task Main(string[] args)
         {
             // first arg is squirt to use
-            FtpSquirt squirt = (FtpSquirt)SquirtParser.GetSquirt(args);
-            squirt.Connect(args[1], args[2], args[3]);
+            FtpSquirt squirt = new FtpSquirt(args[1], args[2], args[3]);
+            // squirt.Connect(args[1], args[2], args[3]);
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-            IProgress<UploadProgress> progress = new Progress<UploadProgress>();
-            await squirt.UploadFolderAsync(args[4], args.Length > 4 ? args[5] : "/", cancellationTokenSource.Token, progress);
+            IProgress<UploadProgress> progress = new Progress<UploadProgress>(pr=> Console.WriteLine(pr.Message));
+            await squirt.UploadFolderAsync(args[4], args.Length > 5 ? args[5] : "/", cancellationTokenSource.Token, progress);
         }
     }
 }
