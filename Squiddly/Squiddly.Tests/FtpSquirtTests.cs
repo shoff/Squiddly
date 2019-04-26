@@ -9,6 +9,8 @@ using AutoFixture;
 
 namespace Squiddly.Tests
 {
+    using Domain.Squirts;
+
     public class FtpSquirtTests : BaseTest
     {
         private readonly CancellationToken token;

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace Squiddly
 {
+    using Domain.Squirts;
+
     class Program
     {
         static async Task Main(string[] args)

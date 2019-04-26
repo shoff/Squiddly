@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 namespace Squiddly
 {
+    using Domain.Squirts;
+
     internal static class SquirtParser
     {
         private static readonly Dictionary<string, Func<ISquirtable>> squirts = new Dictionary<string, Func<ISquirtable>>
