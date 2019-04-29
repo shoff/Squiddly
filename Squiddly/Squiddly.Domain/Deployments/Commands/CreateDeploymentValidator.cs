@@ -2,7 +2,7 @@
 {
     using FluentValidation;
 
-    public class CreateDeploymentValidator : AbstractValidator<CreateDeployment>
+    public class CreateDeploymentValidator : AbstractValidator<CreateDeploymentCommand>
     {
         public CreateDeploymentValidator()
         {

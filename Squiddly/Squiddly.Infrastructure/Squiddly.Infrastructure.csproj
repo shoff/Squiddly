@@ -10,4 +10,8 @@
     <PackageReference Include="Polly" Version="7.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 </Project>

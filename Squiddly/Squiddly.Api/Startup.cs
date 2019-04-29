@@ -23,7 +23,6 @@
             HostingEnvironment = hostingEnvironment;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(hostingEnvironment.ContentRootPath)
-                .AddJsonFile("certificate.json", optional: false, reloadOnChange: true)
                 .AddJsonFile("appsettings.json", false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{hostingEnvironment.EnvironmentName}.json", true);
 
@@ -84,6 +83,8 @@
         private void InitializeConfiguration(IServiceCollection services)
         {
             services.Configure<PolicyOptions>(Configuration.GetSection("PolicyOptions"));
+            services.AddScoped<IPolicyFactory, AsyncPolicyFactory>();
+            services.AddScoped<IExecutionPolicies, ExecutionPolicies>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
         }

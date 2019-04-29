@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Squiddly.Data\Squiddly.Data.csproj" />
     <ProjectReference Include="..\Squiddly.Infrastructure\Squiddly.Infrastructure.csproj" />
   </ItemGroup>
 

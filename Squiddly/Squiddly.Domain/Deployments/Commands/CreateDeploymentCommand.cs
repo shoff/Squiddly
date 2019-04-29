@@ -3,7 +3,7 @@
     using Infrastructure.Deployments;
     using MediatR;
 
-    public class CreateDeployment : DeploymentDto,  IRequest<DeploymentResult>
+    public class CreateDeploymentCommand : DeploymentDto,  IRequest<DeploymentResult>
     {
     }
 }
