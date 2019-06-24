@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Infrastructure.Dotnet
+﻿namespace Squiddly.Domain.Dotnet
 {
     public class CmdProgress
     {

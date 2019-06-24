@@ -6,17 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="8.1.0" />
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="ChaosMonkey.Guards.NetStandard" Version="1.0.23" />
-    <PackageReference Include="FluentFTP" Version="24.0.0" />
-    <PackageReference Include="FluentValidation" Version="8.3.0" />
+    <PackageReference Include="FluentFTP" Version="25.0.3" />
+    <PackageReference Include="FluentValidation" Version="8.4.0" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="Polly" Version="7.1.0" />
-    <PackageReference Include="Zatoichi.Common.Infrastructure" Version="1.1.5" />
+    <PackageReference Include="Zatoichi.Common.Infrastructure" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Squiddly.Data\Squiddly.Data.csproj" />
-    <ProjectReference Include="..\Squiddly.Infrastructure\Squiddly.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

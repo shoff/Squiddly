@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Domain.Deployments.Commands
+﻿namespace Squiddly.Infrastructure.Deployments.Commands
 {
     using FluentValidation;
 

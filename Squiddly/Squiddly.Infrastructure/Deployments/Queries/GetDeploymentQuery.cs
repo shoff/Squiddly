@@ -1,6 +1,5 @@
-﻿namespace Squiddly.Domain.Deployments.Queries
+﻿namespace Squiddly.Infrastructure.Deployments.Queries
 {
-    using Infrastructure.Deployments;
     using MediatR;
 
     public class GetDeploymentQuery : DeploymentQueryDto, IRequest<DeploymentResult>

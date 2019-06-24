@@ -31,7 +31,7 @@
             Guard.IsNotNull(progress, nameof(progress));
 
             var uploadProgress = new UploadProgress("upload starting", 0, 1);
-            eventualSuccesses = 0;
+            this.eventualSuccesses = 0;
             progress.Report(uploadProgress);
 
             // Define our policy:
@@ -51,7 +51,7 @@
                     progress.Report(new UploadProgress(message + exception.Message, exception: true));
                 });
 
-            totalRequests = 0;
+            this.totalRequests = 0;
             bool internalCancel = false;
 
             // Do the following until a key is pressed
@@ -60,7 +60,7 @@
                 var fileList = Directory.GetFiles(folder);
                 for (int i = 0; i < fileList.Length; i++)
                 {
-                    totalRequests++;
+                    this.totalRequests++;
 
                     try
                     {
@@ -77,7 +77,7 @@
                     }
                     catch (Exception e)
                     {
-                        progress.Report(new UploadProgress("Request " + totalRequests + " eventually failed with: " + e.Message, exception: true));
+                        progress.Report(new UploadProgress("Request " + this.totalRequests + " eventually failed with: " + e.Message, exception: true));
                         throw;
                     }
 
@@ -98,11 +98,11 @@
             if (!exception)
             {
                 var percent = (double) 100.0 * (double) complete / (double) total;
-                Message = $"Uploaded {message} {complete} of {total} - ({(int)percent} %) completed";
+                this.Message = $"Uploaded {message} {complete} of {total} - ({(int)percent} %) completed";
             }
             else
             {
-                Message = message;
+                this.Message = message;
             }
         }
         public string Message { get; set; }

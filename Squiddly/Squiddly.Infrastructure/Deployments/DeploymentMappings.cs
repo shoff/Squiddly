@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Domain.Deployments
+﻿namespace Squiddly.Infrastructure.Deployments
 {
     using AutoMapper;
 

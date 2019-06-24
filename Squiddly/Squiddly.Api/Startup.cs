@@ -4,6 +4,7 @@
     using Data;
     using Domain;
     using FluentValidation.AspNetCore;
+    using Infrastructure.Deployments.Commands;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,6 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Squiddly.Domain.Deployments.Commands;
     using Swashbuckle.AspNetCore.Swagger;
     using Zatoichi.Common.Infrastructure.Resilience;
 

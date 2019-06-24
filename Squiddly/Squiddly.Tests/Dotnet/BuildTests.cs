@@ -2,7 +2,7 @@
 {
     using System;
     using System.IO;
-    using Infrastructure.Dotnet;
+    using Domain.Dotnet;
     using Microsoft.Extensions.Logging;
     using Moq;
     using Xunit;
