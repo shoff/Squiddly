@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Infrastructure.Deployments
+﻿namespace Squiddly.Dtos.Deployments
 {
     using System;
     using System.Collections.Generic;

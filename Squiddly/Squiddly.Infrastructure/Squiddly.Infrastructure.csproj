@@ -9,17 +9,20 @@
     <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="ChaosMonkey.Guards.NetStandard" Version="1.0.23" />
     <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="octokit" Version="0.32.0" />
     <PackageReference Include="Polly" Version="7.1.0" />
     <PackageReference Include="Zatoichi.Common.Infrastructure" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
+    <Folder Include="Issues\" />
+    <Folder Include="Projects\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Squiddly.Data\Squiddly.Data.csproj" />
     <ProjectReference Include="..\Squiddly.Domain\Squiddly.Domain.csproj" />
+    <ProjectReference Include="..\Squiddly.Dtos\Squiddly.Dtos.csproj" />
   </ItemGroup>
 
   <ItemGroup>

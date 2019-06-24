@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Infrastructure.Issues
+﻿namespace Squiddly.Dtos.Issues
 {
     public class IssueDto
     {

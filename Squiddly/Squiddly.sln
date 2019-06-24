@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squiddly.Web", "Squiddly.We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E77FFCBB-5BA3-4469-9DDF-ABAB92BC3890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squiddly.Dtos", "Squiddly.Dtos\Squiddly.Dtos.csproj", "{804AD13C-684F-4B7F-A9A5-EB20E47F1A9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{2AAC17D4-F40C-4CF7-BE74-15F8CF6D5137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AAC17D4-F40C-4CF7-BE74-15F8CF6D5137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AAC17D4-F40C-4CF7-BE74-15F8CF6D5137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804AD13C-684F-4B7F-A9A5-EB20E47F1A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804AD13C-684F-4B7F-A9A5-EB20E47F1A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804AD13C-684F-4B7F-A9A5-EB20E47F1A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804AD13C-684F-4B7F-A9A5-EB20E47F1A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
