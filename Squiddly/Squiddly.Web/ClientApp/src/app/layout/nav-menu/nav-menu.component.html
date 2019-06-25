@@ -1,0 +1,17 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1>Gaijin Jingle Cats</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]='["/"]'>Home</a>
+        <a mat-button [routerLink]='["/counter"]'>Counter</a>
+        <a mat-button [routerLink]='["/fetch-data"]'>Fetch data</a>
+        <a mat-button [routerLink]='["/events"]'> Create Event</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

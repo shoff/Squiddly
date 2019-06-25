@@ -6,13 +6,12 @@
     using Domain.Dotnet.Builds;
     using DomainProject = Domain.Projects.Project;
     using DomainBuild = Domain.Builds.Build;
-    using DomainBuildStep = Domain.Builds.BuildStep;
-
 
     public class ProjectProfile : Profile
     {
         public ProjectProfile()
         {
+            this.CreateMap<Build, DomainBuild>().ConvertUsing<BuildConverter>();
             this.CreateMap<Project, DomainProject>().ConvertUsing<ProjectConverter>();
         }
     }
@@ -26,14 +25,14 @@
 
             foreach (var step in source.BuildSteps)
             {
-                var st = new DotnetBuildStep
-                {
-                };
+                var st = new DotnetBuildStep();
+                destination.Steps.Add(st);
             }
+
+            return destination;
         }
     }
-
-
+    
     public class ProjectConverter : ITypeConverter<Project, DomainProject>
     {
         public DomainProject Convert(Project source, DomainProject destination, ResolutionContext context)
@@ -48,5 +47,4 @@
             return destination;
         }
     }
-
 }
