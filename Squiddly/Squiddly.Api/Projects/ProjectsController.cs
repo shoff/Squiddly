@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+    using AutoMapper;
     using ChaosMonkey.Guards;
     using Dtos.Projects;
     using Infrastructure.Projects.Queries;
@@ -14,20 +15,23 @@
     [ApiController]
     public class ProjectsController : ControllerBase
     {
+        private readonly IMapper mapper;
         private readonly IMediator mediator;
         private readonly ILogger<ProjectsController> logger;
 
         public ProjectsController(
+            IMapper mapper,
             IMediator mediator,
             ILogger<ProjectsController> logger)
         {
+            this.mapper = Guard.IsNotNull(mapper, nameof(mapper));
             this.mediator = Guard.IsNotNull(mediator, nameof(mediator));
             this.logger = Guard.IsNotNull(logger, nameof(logger));
             this.logger.LogTrace("Projects controller created.");
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllProjects()
         {
             var query = new GetProjectsQuery();
             var result = await this.mediator.Send(query);
@@ -35,7 +39,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ProjectDto project)
+        public async Task<IActionResult> CreateProject([FromBody] ProjectDto project)
         {
             throw new NotImplementedException();
         }

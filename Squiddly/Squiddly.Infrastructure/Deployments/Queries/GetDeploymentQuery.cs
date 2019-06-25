@@ -1,6 +1,5 @@
 ﻿namespace Squiddly.Infrastructure.Deployments.Queries
 {
-    using Dtos;
     using Dtos.Deployments;
     using MediatR;
 

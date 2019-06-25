@@ -34,5 +34,10 @@
 
         public DbSet<Deployment> Deployments { get; set; }
         public DbSet<Issue> Issues { get; set; }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Build>Builds { get; set; }
+        public DbSet<BuildStep> BuildSteps { get; set; }
+
      }
 }

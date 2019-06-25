@@ -2,6 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using MediatR;
+    using Zatoichi.Common.Infrastructure.Services;
 
     public class ProjectDto
     {
@@ -12,5 +15,9 @@
         public DateTime LastUpdated { get; set; }
         public string Repository { get; set; }
         public ICollection<string> Branches { get; set; } = new HashSet<string>();
+    }
+
+    public class CreateProjectDto : ProjectDto, IRequest<ApiResult>
+    {
     }
 }

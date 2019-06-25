@@ -1,0 +1,21 @@
+﻿namespace Squiddly.Data.Data
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    public class Project
+    {
+        [Key]
+        public int ProjectId { get; set; }
+        [StringLength(40)]
+        public string Name { get; set; }
+        [StringLength(256)]
+        public string Description { get; set; }
+        public DateTime DateCreated { get; set; }
+        public string GitRepository { get; set; }
+        public string GitUserName { get; set; }
+        public string GitPassword { get; set; }
+        public virtual ICollection<Branch> Branches { get; set; } = new HashSet<Branch>();
+    }
+}

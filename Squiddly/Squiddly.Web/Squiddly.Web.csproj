@@ -16,6 +16,7 @@
     <PackageReference Include="ChaosMonkey.Guards.NetStandard" Version="1.0.23" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="zatoichi.common.infrastructure" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>

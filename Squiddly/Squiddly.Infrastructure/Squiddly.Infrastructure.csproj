@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="Issues\" />
-    <Folder Include="Projects\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
