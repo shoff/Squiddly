@@ -4,14 +4,14 @@
 
     public class Build
     {
-        public ICollection<BuildStep> Steps { get; set; } = new HashSet<BuildStep>();
+        public ICollection<IBuildStep> Steps { get; set; } = new HashSet<IBuildStep>();
 
         internal void RemoveBuildStep(string name)
         {
             throw new System.NotImplementedException();
         }
 
-        internal void AddBuildStep(BuildStep buildStep)
+        internal void AddBuildStep(IBuildStep buildStep)
         {
             throw new System.NotImplementedException();
         }

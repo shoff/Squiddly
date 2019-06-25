@@ -17,7 +17,7 @@
             this.Build.RemoveBuildStep(name);
         }
 
-        public void AddBuildStep(BuildStep buildStep)
+        public void AddBuildStep(IBuildStep buildStep)
         {
             this.Build.AddBuildStep(buildStep);
         }

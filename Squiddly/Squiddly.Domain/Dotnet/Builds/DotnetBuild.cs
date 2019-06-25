@@ -2,6 +2,9 @@
 {
     public class DotnetBuild : DotnetBuildStep
     {
-
+        public DotnetBuild()
+        {
+            this.name = "Build";
+        }
     }
 }

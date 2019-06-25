@@ -4,9 +4,9 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using ChaosMonkey.Guards;
-    using Dtos.Projects;
     using Infrastructure.Projects.Queries;
     using MediatR;
+    using Messages.Projects;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using Zatoichi.Common.Infrastructure.Extensions;

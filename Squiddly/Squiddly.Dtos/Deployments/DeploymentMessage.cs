@@ -1,10 +1,10 @@
-﻿namespace Squiddly.Dtos.Deployments
+﻿namespace Squiddly.Messages.Deployments
 {
     using System;
     using System.Collections.Generic;
     using Issues;
 
-    public class DeploymentDto
+    public class DeploymentMessage
     {
         public long DeploymentId { get; set; }
         public string DeploymentName { get; set; }

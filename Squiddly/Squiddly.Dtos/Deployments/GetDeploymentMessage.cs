@@ -1,8 +1,8 @@
-﻿namespace Squiddly.Dtos.Deployments
+﻿namespace Squiddly.Messages.Deployments
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class DeploymentQueryDto
+    public class GetDeploymentMessage
     {
         public long DeploymentId { get; set; }
         [StringLength(256)]

@@ -3,8 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Net;
-    using Dtos;
-    using Dtos.Projects;
+    using Messages.Projects;
     using Zatoichi.Common.Infrastructure.Services;
 
     public class ProjectsResult : ApiResult<ICollection<ProjectDto>>

@@ -2,7 +2,7 @@
 {
     using AutoMapper;
     using ChaosMonkey.Guards;
-    using Dtos.Deployments;
+    using Messages.Deployments;
     using Zatoichi.Common.Infrastructure.Services;
 
     public class DeploymentResult : ApiResult<DeploymentDto>

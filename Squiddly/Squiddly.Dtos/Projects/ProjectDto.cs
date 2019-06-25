@@ -1,8 +1,7 @@
-﻿namespace Squiddly.Dtos.Projects
+﻿namespace Squiddly.Messages.Projects
 {
     using System;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class ProjectDto
     {

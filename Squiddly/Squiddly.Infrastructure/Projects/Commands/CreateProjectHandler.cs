@@ -6,8 +6,8 @@
     using ChaosMonkey.Guards;
     using Data;
     using Domain.Projects;
-    using Dtos.Projects;
     using MediatR;
+    using Messages.Projects;
     using Microsoft.Extensions.Logging;
     using Zatoichi.Common.Infrastructure.Services;
 

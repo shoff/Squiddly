@@ -16,12 +16,13 @@
 
   <ItemGroup>
     <Folder Include="Issues\" />
+    <Folder Include="Builds\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Squiddly.Data\Squiddly.Data.csproj" />
     <ProjectReference Include="..\Squiddly.Domain\Squiddly.Domain.csproj" />
-    <ProjectReference Include="..\Squiddly.Dtos\Squiddly.Dtos.csproj" />
+    <ProjectReference Include="..\Squiddly.Dtos\Squiddly.Messages.csproj" />
   </ItemGroup>
 
   <ItemGroup>

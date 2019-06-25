@@ -10,7 +10,7 @@
     using Microsoft.Extensions.Logging;
     using Zatoichi.Common.Infrastructure.Resilience;
 
-    public class GetDeploymentHandler: IRequestHandler<GetDeploymentQuery, DeploymentResult>
+    public class GetDeploymentHandler: IRequestHandler<GetGetDeploymentQuery, DeploymentResult>
     {
         private readonly IMapper mapper;
         private readonly ISquidDbContext squidDbContext;
@@ -30,7 +30,7 @@
         }
 
         /// <inheritdoc />
-        public async Task<DeploymentResult> Handle(GetDeploymentQuery request, CancellationToken cancellationToken)
+        public async Task<DeploymentResult> Handle(GetGetDeploymentQuery request, CancellationToken cancellationToken)
         {
             Guard.IsNotNull(request, nameof(request));
 

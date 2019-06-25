@@ -1,7 +1,7 @@
 ﻿namespace Squiddly.Infrastructure.Deployments.Commands
 {
-    using Dtos.Deployments;
     using MediatR;
+    using Messages.Deployments;
 
     public class CreateDeploymentCommand : DeploymentDto,  IRequest<DeploymentResult>
     {

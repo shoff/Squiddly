@@ -1,4 +1,4 @@
-﻿namespace Squiddly.Dtos.Projects
+﻿namespace Squiddly.Messages.Projects
 {
     using MediatR;
     using Zatoichi.Common.Infrastructure.Services;
