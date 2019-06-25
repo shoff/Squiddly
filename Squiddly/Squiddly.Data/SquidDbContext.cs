@@ -38,6 +38,7 @@
         public DbSet<Project> Projects { get; set; }
         public DbSet<Build>Builds { get; set; }
         public DbSet<BuildStep> BuildSteps { get; set; }
+        public DbSet<GitCredential> Credentials { get; set; }
 
-     }
+    }
 }

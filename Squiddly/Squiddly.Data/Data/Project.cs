@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Project
     {
@@ -14,8 +15,10 @@
         public string Description { get; set; }
         public DateTime DateCreated { get; set; }
         public string GitRepository { get; set; }
-        public string GitUserName { get; set; }
-        public string GitPassword { get; set; }
+        [ForeignKey("Credentials")]
+        public int GitCredentialsId { get; set; }
+        public virtual GitCredential Credentials { get; set; }
         public virtual ICollection<Branch> Branches { get; set; } = new HashSet<Branch>();
     }
+
 }
